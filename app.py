@@ -59,116 +59,94 @@ st.markdown(
 )
 
 # --- EXPERIÊNCIA PROFISSIONAL ---
+# --- EXPERIÊNCIA PROFISSIONAL ---
 st.write("---") # Linha divisória
 st.header("Experiência Profissional")
 
-# --- BLOCO 1: LEITURA SLZ ---
-st.subheader("Coordenadora de Loja / Encarregada de Setor - Leitura SLZ (2014-2018)")
-st.markdown(
-    """
-    Nesta função, liderei equipes e otimizei processos de vendas e estoque. 
-    Uma das minhas principais contribuições foi a reestruturação do controle de inventário, 
-    que teve um impacto direto na disponibilidade dos produtos para os clientes.
-    """
-)
-
-# Criando dados simulados para o gráfico de rupturas
-# O objetivo é mostrar uma tendência de queda, representando o resultado do seu trabalho
-data = {
-    'Ano': ['2015', '2016', '2017', '2018'],
-    'Índice de Ruptura (%)': [12.5, 8.2, 5.1, 3.4] # Números simulados mostrando a queda
-}
-df_ruptura = pd.DataFrame(data)
-
-# Criando o gráfico de linhas com Plotly Express
-fig_ruptura = px.line(
-    df_ruptura,
-    x='Ano',
-    y='Índice de Ruptura (%)',
-    title='Redução Progressiva nas Rupturas de Estoque',
-    markers=True, # Adiciona marcadores nos pontos de dados
-    text='Índice de Ruptura (%)' # Mostra o valor no gráfico
-)
-
-# Configurando detalhes do gráfico para ficar mais claro
-fig_ruptura.update_traces(textposition="top center")
-fig_ruptura.update_layout(
-    xaxis_title="Ano de Atuação",
-    yaxis_title="Percentual de Ruptura"
-)
-
-# Mostrando o gráfico na página
-st.plotly_chart(fig_ruptura, use_container_width=True)
-
-st.success(
-    """
-    **Resultado:** A estruturação de um controle de estoque mais detalhado em Excel proporcionou uma 
-    redução significativa nas rupturas de produtos, garantindo maior disponibilidade de 
-    itens-chave para o cliente. 
-    """
-)
+# --- BLOCO 1: CONSULTORA AUTÔNOMA ---
+with st.expander("**Consultora de Vendas e Empreendedora** - (2024 - Atualmente)"):
+    st.markdown(
+        """
+        - **Gestão Comercial e Vendas Multicanal:** Realizo a prospecção ativa e consultoria de vendas 
+        personalizada para produtos de maquiagem e confecções, utilizando canais presenciais, 
+        redes sociais para marketing e engajamento, e uma rede de indicações para expansão da base de clientes.
+        """
+    )
+    st.success(
+        """
+        **Diferencial:** Analisei a necessidade do negócio e desenvolvi uma solução customizada para gestão 
+        de inventário e controle financeiro. O sistema permite o monitoramento do fluxo de caixa, 
+        análise de margem de lucro por produto e otimização do controle de estoque, resultando em 
+        melhor tomada de decisão e saúde financeira da atividade.
+        """
+    )
 
 # --- BLOCO 2: ALGOR CERTIFICAÇÃO DIGITAL ---
-st.subheader("Agente de Registro / Assistente Comercial - Algor Certificação Digital (2019 - 2021)")
-st.markdown(
-    """
-    Nesta posição, avancei da análise em planilhas para a estruturação de dashboards em Excel, 
-    monitorando a performance regional para apoiar decisões estratégicas. Meu foco principal era no 
-    relacionamento com parceiros e na expansão da nossa carteira de clientes.
-    """
-)
+with st.expander("**Agente de Registro / Assistente Comercial** - Algor Certificação Digital (2019)"):
+    st.markdown(
+        """
+        Nesta posição, avancei da análise em planilhas para a estruturação de dashboards em Excel, 
+        monitorando a performance regional para apoiar decisões estratégicas, com foco no 
+        relacionamento com parceiros e na expansão da carteira de clientes.
+        """
+    )
+    data_clientes = {
+        'Período': ['Início 2019', 'Final 2019'], 'Número de Clientes Ativos': [121, 177]
+    }
+    df_clientes = pd.DataFrame(data_clientes)
+    fig_clientes = px.bar(
+        df_clientes, x='Período', y='Número de Clientes Ativos',
+        title='Crescimento da Base de Clientes Ativos em 2019', text_auto=True
+    )
+    st.plotly_chart(fig_clientes, use_container_width=True)
+    st.success(
+        """
+        **Resultado:** O estabelecimento e fortalecimento do relacionamento com escritórios contábeis 
+        resultou em uma significativa expansão da base de clientes ativos.
+        """
+    )
 
-# Criando dados simulados para o gráfico de expansão de clientes
-data_clientes = {
-    'Período': ['Início do Projeto (2019)', 'Final do Projeto (2021)'],
-    'Número de Clientes Ativos': [85, 250] # Números simulados mostrando forte crescimento
-}
-df_clientes = pd.DataFrame(data_clientes)
+# --- BLOCO 3: LEITURA SLZ ---
+with st.expander("**Coordenadora de Loja / Encarregada de Setor** - Leitura SLZ (2014-2017)"):
+    st.markdown(
+        """
+        - **Gestão de Processos e Equipe:** Liderei equipes e otimizei processos de vendas e estoque. Uma das minhas principais contribuições foi a reestruturação do controle de inventário para reduzir perdas.
+        - **Otimização do Processo de Checkout:** Para resolver a lentidão causada pela digitação manual de produtos sem código de barras, desenvolvi um sistema de códigos de barras avulsos. A iniciativa agilizou o atendimento no caixa e melhorou significativamente a experiência do cliente.
+        """
+    )
+    data_ruptura = {
+        'Ano': ['2015', '2016', '2017'], 'Índice de Ruptura (%)': [12.5, 8.2, 5.1]
+    }
+    df_ruptura = pd.DataFrame(data_ruptura)
+    fig_ruptura = px.line(
+        df_ruptura, x='Ano', y='Índice de Ruptura (%)',
+        title='Redução Progressiva nas Rupturas de Estoque', markers=True, text='Índice de Ruptura (%)'
+    )
+    fig_ruptura.update_traces(textposition="top center")
+    st.plotly_chart(fig_ruptura, use_container_width=True)
+    st.success(
+        """
+        **Resultado:** A reestruturação de controles e processos proporcionou uma 
+        redução significativa nas rupturas de produtos, garantindo maior disponibilidade de 
+        itens-chave e agilidade no atendimento ao cliente.
+        """
+    )
 
-# Criando o gráfico de barras com Plotly Express
-fig_clientes = px.bar(
-    df_clientes,
-    x='Período',
-    y='Número de Clientes Ativos',
-    title='Crescimento da Base de Clientes Ativos',
-    text_auto=True # Adiciona os valores diretamente nas barras
-)
-
-# Configurando detalhes do gráfico
-fig_clientes.update_layout(
-    xaxis_title="Período de Atuação",
-    yaxis_title="Clientes Ativos"
-)
-
-# Mostrando o gráfico na página
-st.plotly_chart(fig_clientes, use_container_width=True)
-
-st.success(
-    """
-    **Resultado:** O estabelecimento e fortalecimento do relacionamento com escritórios contábeis 
-    resultou em uma significativa expansão da base de clientes ativos em menos de dois anos.
-    """
-)
-
-# --- BLOCO 3: EXPERIÊNCIAS ANTERIORES ---
-st.subheader("Outras Experiências que Formaram Minha Base")
-
-# Usando st.expander com títulos em negrito (Markdown)
+# --- BLOCOS RESTANTES ---
 with st.expander("**Líder de Crédito e Crediário** - Esplanada Brasil LTDA (2012 - 2013)"):
     st.markdown(
         """
-        - Coordenei o setor de crédito, acompanhando relatórios de inadimplência e promovendo estratégias de negociação. 
-        - Elaborei metas mensais e campanhas promocionais que contribuíram para o crescimento do faturamento da unidade. 
+        - Coordenei o setor de crédito, acompanhando relatórios de inadimplência e promovendo estratégias de negociação.
+        - Elaborei metas mensais e campanhas promocionais que contribuíram para o crescimento do faturamento da unidade.
         - Desenvolvi relatórios analíticos para acompanhar o desempenho da equipe e auxiliar os gestores na tomada de decisão.
         """
     )
 
-with st.expander("**Assistente Administrativo** - Padrão de Vida Corretora de Seguros (2011-2012)"):
+with st.expander("**Assistente Administrativo** - Padrão de Vida Corretora de Seguros (2011)"):
     st.markdown(
         """
         - Fui responsável pela organização de propostas comerciais e pela formalização documental, garantindo maior agilidade nos processos.
         - Atuei no suporte direto à equipe comercial, realizando atualização de cadastros e acompanhamento de contratos de clientes.
-        - Contribuí para a fidelização de clientes com um atendimento mais humanizado e próximo.
         """
     )
 
@@ -177,7 +155,6 @@ with st.expander("**Menor Aprendiz Administrativo** - Losango Promoções de Ven
         """
         - Apoiei o setor administrativo com elaboração de relatórios e planilhas, desenvolvendo desde cedo práticas de organização e análise de dados.
         - Prestei suporte no atendimento ao cliente e lojistas, auxiliando em processos de cobrança e controle de transações financeiras.
-        - Essa experiência foi fundamental para consolidar minha disciplina, adaptabilidade e interesse em rotinas administrativas e analíticas.
         """
     )
 
@@ -206,16 +183,16 @@ st.header("Habilidades Técnicas")
 # Criando dados para o gráfico de habilidades
 dados_habilidades = {
     'Habilidade': [
-        'Power BI (Modelagem, Relatórios)', 'Google Workspace',  # Avançado
+        'Google Workspace', 'Power BI (Modelagem, Relatórios)',  # Avançado
         'Pacote Office', 'Excel (Dashboards, KPIs)',  # Intermediário
-        'Python', 'SQL (Básico)',  # Em aprendizado
+        'SQL (Básico)', 'Python',   # Em aprendizado
     ],
     'Nível': [
         'Avançado', 'Avançado',
-        'Intermediário', 'Intermediário', 'Intermediário',
-        'Em Aprendizado'
+        'Intermediário', 'Intermediário',
+        'Em Aprendizado', 'Em Aprendizado'
     ],
-    'Valor': [90, 90, 50, 65, 70, 30] # Valores numéricos para ordenar o gráfico
+    'Valor': [80, 80, 65, 50, 40, 30] # Valores numéricos para ordenar o gráfico
 }
 df_habilidades = pd.DataFrame(dados_habilidades)
 
@@ -266,5 +243,4 @@ with col2:
 
 # --- RODAPÉ ---
 st.write("---") # Linha divisória
-st.markdown("© 2025 Sammya Caroline de Oliveira Ferreira. Todos os direitos reservados.")
- 
+st.markdown("© 2025 SCOF. Todos os direitos reservados.")
