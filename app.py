@@ -239,7 +239,7 @@ with col1:
     st.markdown("🏅 **Software Architect / Mobile Developer - Gran Centro Universitário (357h)**")
     st.markdown("🏅 **Full Stack, Back-End e Front-End Developer - Gran Centro Universitário (340h)**")
     st.markdown("🏅 **Back-End Developer/ Process Mapping Analyst - Gran Centro Universitário (320h)**")
-    st.markdown("🏅 **Data Administrator/ Project Manager - Gran Centro Universitário (30h)**")
+    st.markdown("🏅 **Data Administrator/ Project Manager - Gran Centro Universitário (380h)**")
     st.markdown("🏅 **Hands-on Professional/ Front-end Developer - Gran Centro Universitário (340h)**")
 
 with col2:
