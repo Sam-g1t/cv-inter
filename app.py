@@ -38,11 +38,10 @@ with col2:
     st.write("---") # Linha divisória
     
     # Informações de Contato ATUALIZADAS
+    st.write("🔗 [LinkedIn: in/sammya-ferreira](https://linkedin.com/in/sammya-ferreira)")
     st.write("📫 sammyacaroline90@gmail.com")
     st.write("📞 [(98) 98451-1565](https://wa.me/5598984511565)")
     st.write("📍 Paço do Lumiar, Maranhão")
-    st.write("🔗 [LinkedIn: in/sammya-ferreira](https://linkedin.com/in/sammya-ferreira)")
-
 
 # --- RESUMO PROFISSIONAL ---
 st.header("Resumo Profissional")
@@ -54,11 +53,10 @@ st.markdown(
     no varejo. Minha paixão é entender necessidades para desenhar e implementar soluções tecnológicas. 
     Ao longo da minha carreira, transformei números em estratégias , liderei equipes focadas em resultados e evoluí da criação de relatórios em Excel para o desenvolvimento de dashboards interativos em **Power BI**. 
     Busco uma oportunidade onde eu possa unir minha visão de negócio com minha capacidade de analista e 
-    desenvolvedora para criar e sugerir sistemas que realmente impulsionam pessoas e empresas.
+    desenvolvedora para criar ou sugerir ferramentas que realmente impulsionam pessoas e empresas.
     """
 )
 
-# --- EXPERIÊNCIA PROFISSIONAL ---
 # --- EXPERIÊNCIA PROFISSIONAL ---
 st.write("---") # Linha divisória
 st.header("Experiência Profissional")
@@ -98,7 +96,10 @@ with st.expander("**Agente de Registro / Assistente Comercial** - Algor Certific
         df_clientes, x='Período', y='Número de Clientes Ativos',
         title='Crescimento da Base de Clientes Ativos em 2019', text_auto=True
     )
-    st.plotly_chart(fig_clientes, use_container_width=True)
+    
+    # Linha abaixo foi alterada
+    st.plotly_chart(fig_clientes, use_container_width=True, config={'staticPlot': True})
+
     st.success(
         """
         **Resultado:** O estabelecimento e fortalecimento do relacionamento com escritórios contábeis 
@@ -118,12 +119,17 @@ with st.expander("**Coordenadora de Loja / Encarregada de Setor** - Leitura SLZ 
         'Ano': ['2015', '2016', '2017'], 'Índice de Ruptura (%)': [12.5, 8.2, 5.1]
     }
     df_ruptura = pd.DataFrame(data_ruptura)
+
+    # ... (código que cria o df_ruptura) ...
     fig_ruptura = px.line(
         df_ruptura, x='Ano', y='Índice de Ruptura (%)',
         title='Redução Progressiva nas Rupturas de Estoque', markers=True, text='Índice de Ruptura (%)'
     )
     fig_ruptura.update_traces(textposition="top center")
-    st.plotly_chart(fig_ruptura, use_container_width=True)
+    
+    # Linha abaixo foi alterada
+    st.plotly_chart(fig_ruptura, use_container_width=True, config={'staticPlot': True})
+
     st.success(
         """
         **Resultado:** A reestruturação de controles e processos proporcionou uma 
@@ -215,11 +221,12 @@ fig_habilidades.update_layout(
     height=400,
 )
 fig_habilidades.update_traces(
-    textposition='outside', # Posição do texto
-    marker_color='#1f77b4'  # Cor das barras
+    textposition='outside',
+    marker_color='#1f77b4'
 )
 
-st.plotly_chart(fig_habilidades, use_container_width=True)
+# Linha abaixo foi alterada
+st.plotly_chart(fig_habilidades, use_container_width=True, config={'staticPlot': True})
 
 # --- CERTIFICAÇÕES ---
 st.write("---")
